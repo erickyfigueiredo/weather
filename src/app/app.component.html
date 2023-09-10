@@ -6,75 +6,75 @@
   </form>
 </div>
 <div class="container" *ngIf="weatherData">
-<div class="upper-data">
-  <img src="../assets/hot.jpg" alt="" *ngIf="weatherData.current_observation.condition.temperature > 15">
-  <img src="../assets/night.jpg" alt="" *ngIf="weatherData.current_observation.condition.temperature <= 15">
-  <div class="weather-data">
-    <div class="location">{{ weatherData.location.city }}</div>
-    <div class="temperature">{{ weatherData.current_observation.condition.temperature | number: '1.0-0'}}°C</div>
-    <div class="small-text">{{ weatherData.current_observation.condition.text }}</div>
-  </div>
-</div>
-<div class="lower-data">
-  <div class="more-info-label">
-    More Information
-  </div>
-  <div class="more-info-container">
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-sun"></i> sunrise</span>
-        <div class="info-block-value">
-          {{ weatherData.current_observation.astronomy.sunrise }}
-        </div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-moon"></i> sunset</span>
-        <div class="info-block-value">
-          {{ weatherData.current_observation.astronomy.sunset }}
-        </div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-temperature-low"></i> min</span>
-        <div class="info-block-value">
-          {{ weatherData.forecasts[0].low | number: '1.0-0'}}°C
-        </div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-temperature-high"></i> max</span>
-        <div class="info-block-value">
-          {{ weatherData.forecasts[0].high| number: '1.0-0'}}°C
-        </div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-water"></i> humidity</span>
-        <div class="info-block-value">
-          {{ weatherData.current_observation.atmosphere.humidity }}%
-        </div>
-      </div>
-    </div>
-
-    <div class="info-block">
-      <div class="info-block-label">
-        <span><i class="fa-solid fa-wind"></i>wind</span>
-        <div class="info-block-value">
-          {{ weatherData.current_observation.wind.speed }} km/h
-        </div>
-      </div>
+  <div class="upper-data">
+    <img src="../assets/hot.jpg" alt="" *ngIf="weatherData.current_observation.condition.temperature > 15">
+    <img src="../assets/night.jpg" alt="" *ngIf="weatherData.current_observation.condition.temperature <= 15">
+    <div class="weather-data">
+      <div class="location">{{ weatherData.location.city }}</div>
+      <div class="temperature">{{ weatherData.current_observation.condition.temperature | number: '1.0-0'}}°C</div>
+      <div class="small-text">{{ weatherData.current_observation.condition.text }}</div>
     </div>
   </div>
-</div>
+  <div class="lower-data">
+    <div class="more-info-label">
+      More Information
+    </div>
+    <div class="more-info-container">
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-sun"></i> sunrise</span>
+          <div class="info-block-value">
+            {{ weatherData.current_observation.astronomy.sunrise }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-moon"></i> sunset</span>
+          <div class="info-block-value">
+            {{ weatherData.current_observation.astronomy.sunset }}
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-temperature-low"></i> min</span>
+          <div class="info-block-value">
+            {{ weatherData.forecasts[0].low | number: '1.0-0'}}°C
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-temperature-high"></i> max</span>
+          <div class="info-block-value">
+            {{ weatherData.forecasts[0].high| number: '1.0-0'}}°C
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-water"></i> humidity</span>
+          <div class="info-block-value">
+            {{ weatherData.current_observation.atmosphere.humidity }}%
+          </div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+          <span><i class="fa-solid fa-wind"></i>wind</span>
+          <div class="info-block-value">
+            {{ weatherData.current_observation.wind.speed }} km/h
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <router-outlet></router-outlet>
